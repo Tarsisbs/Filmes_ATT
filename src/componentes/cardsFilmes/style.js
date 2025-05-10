@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     textNota:{
         fontSize:10,
-        color: '#fff',
+        color: '#FFCC33',
         paddingLeft:4
     },
     images:{
