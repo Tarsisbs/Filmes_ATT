@@ -36,6 +36,13 @@ const styles = StyleSheet.create({
         color: '#FFCC33',
         paddingLeft:4
     },
+    textSinopse:{
+        fontSize:20,
+        color:'#fff',
+        fontWeight:200,
+        textAlign:'center',
+        marginTop:20
+    },
     images:{
         width:'260px',
         height:'380px',

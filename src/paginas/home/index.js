@@ -31,7 +31,7 @@ export default function Home(){
                     keyExtractor={(item) => item.id}
                     renderItem={({item}) => (
 
-                    <CardMovies titulo = {item.nome} nota = {item.nota} imagem = {item.imagem} sinopse = {item.sinopse}/>
+                    <CardMovies titulo = {item.nome} lancamento = {item.lancamento} nota = {item.nota} notaDetalhes = {item.notaDetalhes} imagem = {item.imagem} sinopse = {item.sinopse}/>
                     
                     )}
 
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
     textBanner: {
       fontSize: 30,
       color: "white",
-      marginTop: 15,
+      marginTop: 25,
+      marginBottom: 20,
       marginLeft: -180,
       fontWeight: 'bold'
     }

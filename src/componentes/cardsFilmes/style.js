@@ -1,13 +1,6 @@
 import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
-    containerFilmes:{
-        paddingTop:20,
-        paddingBottom:16,
-        paddingRight:16,
-        width:140,
-        height:28
-    },
 
     viewPrincipalFilmes:{
         display:'flex',
@@ -24,24 +17,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#141a45',
         padding:'15px',
         borderRadius:'10px',
-        marginBottom: '10px',
+        marginBottom: '40px',
         marginRight: '20px',
-        width:'150px'
+        width:'210px',
+        height:'430px'
     },
 
     titulo:{
+        fontWeight: 500,
         color: '#fff',
-        fontSize:12,
-        paddingTop:8
+        fontSize:17,
+        paddingTop:8,
+        marginBottom:20
     },
     textNota:{
-        fontSize:10,
+        fontSize:19,
         color: '#FFCC33',
         paddingLeft:4
     },
     images:{
-        width:'130px',
-        height:170,
+        width:'170px',
+        height:270,
         borderRadius:8
     }
 })

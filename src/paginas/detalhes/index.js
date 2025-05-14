@@ -1,4 +1,4 @@
-import { ScrollView, View, Text,Image } from "react-native-web";
+import { ScrollView, View, Text, Image } from "react-native-web";
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
@@ -13,9 +13,10 @@ export default function Detalhes(){
                 <Image style={styles.images} source={{uri:(route.params.imagem)}}/>
 
                 <Text style={styles.titulo}>{route.params.titulo}</Text>
-                <Text style={styles.textNota}>{route.params.nota}</Text>
+                <Text style={styles.titulo}> Lançamento: {route.params.lancamento}</Text>
+                <Text style={styles.textNota}>{route.params.notaDetalhes}</Text>
 
-                <Text> {route.params.sinopse} </Text>
+                <Text style={styles.textSinopse}> Sinopse: {route.params.sinopse} </Text>
             </View>
         </ScrollView>
     )
