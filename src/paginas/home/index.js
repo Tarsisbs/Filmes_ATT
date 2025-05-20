@@ -1,12 +1,16 @@
-import {StyleSheet, Text, View, FlatList, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, FlatList, ScrollView, TouchableOpacity} from 'react-native';
 import Banner from "../../componentes/banner";
 import CardMovies from "../../componentes/cardsFilmes";
 import Filmes from "../../componentes/movies.js";
 import Pesquisa from "../../componentes/barraPesquisa";
 import Cabecalho from "../../componentes/cabecalho";
+import styles from './style.js';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Home(){
+    const navigation = useNavigation();
+
     return(
         <ScrollView style={styles.container}>
 
@@ -22,48 +26,33 @@ export default function Home(){
 
                 <View style={{width:"90%"}}>
 
-                <FlatList
+                  <FlatList
 
-                    horizontal = {true}
+                      showsHorizontalScrollIndicator={false}
 
-                    data = {Filmes}
+                      horizontal = {true}
 
-                    keyExtractor={(item) => item.id}
-                    renderItem={({item}) => (
+                      data = {Filmes}
 
-                    <CardMovies titulo = {item.nome} lancamento = {item.lancamento} nota = {item.nota} notaDetalhes = {item.notaDetalhes} imagem = {item.imagem} sinopse = {item.sinopse}/>
-                    
-                    )}
+                      keyExtractor={(item) => item.id}
+                      renderItem={({item}) => (
 
-                />
+                      <CardMovies titulo = {item.nome} categoria = {item.categoria} lancamento = {item.lancamento} nota = {item.nota} notaDetalhes = {item.notaDetalhes} imagem = {item.imagem} sinopse = {item.sinopse}/>
+                      
+                      )}
+
+                  />
 
                 </View>
+
+                <TouchableOpacity onPress={()=> navigation.navigate('Desenvolvedores')}>
+                  
+                  <Text style={styles.titulo}> Desenvolvedores </Text>
+
+                </TouchableOpacity>
 
             </View>
 
         </ScrollView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#141a28',
-      width: '100%',
-      height: '100%'
-    },
-  
-    containerView:{
-      display:'flex',
-      flexDirection:'column',
-      alignItems:'center'
-    },
-  
-    textBanner: {
-      fontSize: 30,
-      color: "white",
-      marginTop: 25,
-      marginBottom: 20,
-      marginLeft: -180,
-      fontWeight: 'bold'
-    }
-  });

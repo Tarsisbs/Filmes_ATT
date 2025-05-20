@@ -13,6 +13,7 @@ export default function Detalhes(){
                 <Image style={styles.images} source={{uri:(route.params.imagem)}}/>
 
                 <Text style={styles.titulo}>{route.params.titulo}</Text>
+                <Text style={styles.titulo}>Categoria: {route.params.categoria}</Text>
                 <Text style={styles.titulo}> Lançamento: {route.params.lancamento}</Text>
                 <Text style={styles.textNota}>{route.params.notaDetalhes}</Text>
 

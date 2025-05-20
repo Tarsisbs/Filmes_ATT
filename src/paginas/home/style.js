@@ -18,7 +18,19 @@ const styles = StyleSheet.create({
       color: "white",
       marginTop: 15,
       marginLeft: -180,
+      marginBottom:'10px',
       fontWeight: 'bold'
+    },
+
+    titulo:{
+        color: '#fff',
+        fontSize:25,
+        padding:'20px',
+        borderRadius:'15px',
+        borderWidth:'3px',
+        borderColor:'white',
+        backgroundColor: '#141a45',
+        marginBottom:'30px'
     }
 });
 
