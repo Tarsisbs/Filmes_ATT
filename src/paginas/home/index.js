@@ -6,10 +6,35 @@ import Pesquisa from "../../componentes/barraPesquisa";
 import Cabecalho from "../../componentes/cabecalho";
 import styles from './style.js';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 export default function Home(){
     const navigation = useNavigation();
+
+    const [movies,setMovies] = useState([]);
+
+    useEffect(()=>{
+        async function buscarFilmes(){
+            const url = 'https://api.themoviedb.org/3/movie/top_rated?language=pt-br-US&page=1';
+            const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMDkwZjY0MDc3MzlkNGRlZTczZmY5MGVhOTIyMTJiNCIsIm5iZiI6MTc1NTAyMTc1NS42LCJzdWIiOiI2ODliODFiYmRhNTkwYmQ0ZmU2ZDc0OGMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.T9aDNRjmw5BKmxu7rygSwTimH8qRxFsh8AWCJKSCZJI'
+            }
+            };
+
+            const response = await fetch(url, options)
+            const data = await response.json();
+            console.log(data);
+
+            setMovies(data.results);
+        }
+
+        buscarFilmes();
+    },[])
 
     return(
         <ScrollView style={styles.container}>
@@ -32,12 +57,12 @@ export default function Home(){
 
                       horizontal = {true}
 
-                      data = {Filmes}
+                      data = {movies}
 
                       keyExtractor={(item) => item.id}
                       renderItem={({item}) => (
 
-                      <CardMovies titulo = {item.nome} categoria = {item.categoria} lancamento = {item.lancamento} nota = {item.nota} notaDetalhes = {item.notaDetalhes} imagem = {item.imagem} sinopse = {item.sinopse}/>
+                      <CardMovies titulo = {item.title} categoria = {item.categoria} lancamento = {item.lancamento} nota = {item.vote_average} notaDetalhes = {item.notaDetalhes} imagem = {item.poster_path} sinopse = {item.sinopse}/>
                       
                       )}
 
