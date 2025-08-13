@@ -14,6 +14,16 @@ const styles = StyleSheet.create({
         padding: '20px'
     },
 
+    containerFilme:{
+        backgroundColor:'#1C2B47',
+        padding: 15,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 10
+    },
+
     viewFilmes:{
         display:'flex',
         flexDirection:'column',

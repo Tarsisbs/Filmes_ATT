@@ -62,7 +62,7 @@ export default function Home(){
                       keyExtractor={(item) => item.id}
                       renderItem={({item}) => (
 
-                      <CardMovies titulo = {item.title} categoria = {item.categoria} lancamento = {item.lancamento} nota = {item.vote_average} notaDetalhes = {item.notaDetalhes} imagem = {item.poster_path} sinopse = {item.sinopse}/>
+                      <CardMovies titulo = {item.title} lancamento = {item.release_date} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}/>
                       
                       )}
 

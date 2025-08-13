@@ -1,7 +1,6 @@
 import { ScrollView, View, Text, Image } from "react-native-web";
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native";
 import styles from "./style";
 
 export default function Detalhes(){
@@ -10,12 +9,14 @@ export default function Detalhes(){
     return(
         <ScrollView style={styles.container}>
             <View style={styles.containerView}>
-                <Image style={styles.images} source={{uri:(route.params.imagem)}}/>
 
-                <Text style={styles.titulo}>{route.params.titulo}</Text>
-                <Text style={styles.titulo}>Categoria: {route.params.categoria}</Text>
-                <Text style={styles.titulo}> Lançamento: {route.params.lancamento}</Text>
-                <Text style={styles.textNota}>{route.params.notaDetalhes}</Text>
+                <View style={styles.containerFilme}>
+                    <Image style={styles.images} source={{uri: (`https://image.tmdb.org/t/p/original/${route.params.imagem}`)}}/>
+
+                    <Text style={styles.titulo}>{route.params.titulo}</Text>
+                    <Text style={styles.titulo}> Lançamento: {route.params.lancamento}</Text>
+                    <Text style={styles.textNota}>Nota: ⭐{route.params.nota}</Text>
+                </View>
 
                 <Text style={styles.textSinopse}> Sinopse: {route.params.sinopse} </Text>
             </View>

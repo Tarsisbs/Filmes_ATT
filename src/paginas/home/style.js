@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
 
     titulo:{
         color: '#fff',
-        fontSize:25,
-        padding:'20px',
+        fontSize:20,
+        padding:'15px',
         borderRadius:'15px',
-        borderWidth:'3px',
+        borderWidth:'1px',
         borderColor:'white',
-        backgroundColor: '#141a45',
+        backgroundColor: '#1C2B47',
         marginBottom:'30px'
     }
 });
