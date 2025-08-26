@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 15
     },
+
+    iconSearch: {
+        marginLeft: "-40px"
+    }
 })
 
 export default styles;
