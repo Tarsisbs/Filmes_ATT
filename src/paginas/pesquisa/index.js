@@ -1,10 +1,11 @@
-import { View, ScrollView, Text, FlatList, Image } from "react-native";
+import { View, ScrollView, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { use } from "react";
 import { useEffect, useState } from "react";
+import { useNavigation } from '@react-navigation/native';
 import styles from "./style";
 
-export default function PesquisaFilmes(){
+export default function PesquisaFilmes({titulo, lancamento, nota, imagem, sinopse}){
     const[filmes, setFilmes] = useState('');
 
     useEffect(()=>{
@@ -29,19 +30,22 @@ export default function PesquisaFilmes(){
 
     const route = useRoute();
 
+    const navigation = useNavigation();
+
     return(
         <ScrollView style={styles.container}>
             <FlatList
                 data={filmes}
                 keyExtractor={(item)=>item.id}
                 renderItem={({item})=>(
-                    <View style={styles.containerFilmes}>
+                    <TouchableOpacity style={styles.containerFilmes} onPress={()=> navigation.navigate('Detalhes', {imagem, titulo, lancamento, nota, sinopse})}>
                         <Image style ={styles.image} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
                         <View style={styles.info}>
                             <Text style={styles.titulo}>{item.title}</Text>
                             <Text style={styles.tituloNota}>Nota: <View style={styles.numeroNota}>{item.vote_average}</View></Text>
+                            <Text style={styles.titulo}>Lançamento: {"\n"} {item.release_date}</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )}
             />
         </ScrollView>

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         color: 'white',
-        marginBottom: 10
+        marginBottom: 30
     },
 
     tituloNota: {
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         color: 'white',
+        marginBottom: 30
     },
 
     numeroNota: {
