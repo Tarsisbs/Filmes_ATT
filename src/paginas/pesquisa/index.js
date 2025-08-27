@@ -30,16 +30,16 @@ export default function PesquisaFilmes(){
     const route = useRoute();
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <FlatList
                 data={filmes}
                 keyExtractor={(item)=>item.id}
                 renderItem={({item})=>(
-                    <View style={styles.container}>
+                    <View style={styles.containerFilmes}>
                         <Image style ={styles.image} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
-                        <View>
-                            <Text>Filme: {item.title}</Text>
-                            <Text>Nota: {item.vote_average}</Text>
+                        <View style={styles.info}>
+                            <Text style={styles.titulo}>{item.title}</Text>
+                            <Text style={styles.tituloNota}>Nota: <View style={styles.numeroNota}>{item.vote_average}</View></Text>
                         </View>
                     </View>
                 )}
